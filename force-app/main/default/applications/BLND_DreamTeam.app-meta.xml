@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <description>DreamTeam</description>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>DreamTeam</label>
+    <logo>BLND_Logos_Identity/BLND_DreamFactory_Logo.gif</logo>
+    <tabs>BLND_DreamTeam</tabs>
+    <tabs>Outreach__c</tabs>
+    <tabs>Tower__c</tabs>
+</CustomApplication>

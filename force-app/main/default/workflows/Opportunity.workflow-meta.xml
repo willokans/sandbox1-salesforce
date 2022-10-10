@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Alart_Management_for_Each_Closed_Won_Opportuity</fullName>
+        <description>Alart Management for Each Closed Won Opportuity</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>CEO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>CFO</recipient>
+            <type>role</type>
+        </recipients>
+        <recipients>
+            <recipient>COO</recipient>
+            <type>role</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SalesNewCustomerEmail</template>
+    </alerts>
+    <alerts>
+        <fullName>New_Customer_Welcome</fullName>
+        <description>New Customer Welcome</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales Rep</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/SalesNewCustomerEmail</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Opportunity_Won_Record_Type</fullName>
+        <description>Updates the record type of won opportunities to a record type of Won</description>
+        <field>RecordTypeId</field>
+        <lookupValue>Won</lookupValue>
+        <lookupValueType>RecordType</lookupValueType>
+        <name>Opportunity Won Record Type</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>LookupValue</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>true</reevaluateOnChange>
+    </fieldUpdates>
+    <outboundMessages>
+        <fullName>Accounting_System_Alert</fullName>
+        <apiVersion>42.0</apiVersion>
+        <description>Update to accounting for won opps</description>
+        <endpointUrl>http://https//www.salesforce.com/</endpointUrl>
+        <fields>AccountId</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>willokans@gmail.com</integrationUser>
+        <name>Accounting System Alert</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Won Opportunity</fullName>
+        <actions>
+            <name>Alart_Management_for_Each_Closed_Won_Opportuity</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Opportunity_Won_Record_Type</name>
+            <type>FieldUpdate</type>
+        </actions>
+        <actions>
+            <name>Accounting_System_Alert</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <actions>
+            <name>Update_the_Account_Record</name>
+            <type>Task</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Opportunity.StageName</field>
+            <operation>equals</operation>
+            <value>Closed Won</value>
+        </criteriaItems>
+        <description>Updates the record type to Won</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>New_Customer_Welcome</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Opportunity.CloseDate</offsetFromField>
+            <timeLength>15</timeLength>
+            <workflowTimeTriggerUnit>Days</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <tasks>
+        <fullName>Update_the_Account_Record</fullName>
+        <assignedToType>accountOwner</assignedToType>
+        <description>Assign the task for the account owner to update the account record when an opportunity is won</description>
+        <dueDateOffset>3</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <offsetFromField>Opportunity.CloseDate</offsetFromField>
+        <priority>Normal</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Update the Account Record</subject>
+    </tasks>
+</Workflow>

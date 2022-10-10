@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>willokans@gmail.com</contactEmail>
+    <label>POSTMAN CLIENT</label>
+    <oauthConfig>
+        <callbackUrl>https://www.getpostman.com/oauth2/callback</callbackUrl>
+        <consumerKey>3MVG9HxRZv05HarSFdD2UK3hFP_RwxLgvyTlqLqzrsO6FseSro2r.y1iRV2U0rloVt83KfL3zFwXQcER9UlQH</consumerKey>
+        <scopes>Full</scopes>
+    </oauthConfig>
+</ConnectedApp>

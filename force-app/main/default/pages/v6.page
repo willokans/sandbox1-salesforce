@@ -1,0 +1,17 @@
+<apex:page CONtroller="CustomerController6">
+    <apex:form >
+        <apex:outputLabel value="Enter the first name of user: "/>
+        <apex:inputtext value="{!text}" />
+        <apex:commandButton value="Search" action="{!search}"/><p/>
+            <apex:outputText value="The user you entered has the following accounts: " /><p/>
+            <apex:pageBlock >
+                <apex:pageBlockSection title="Accounts">
+                    <apex:pageBlockTable value="{!accounts}" var="a" rendered="{!NOT(ISNULL(accounts))}">
+                        <apex:column value="{!a.Id}"/>
+                        <apex:column value="{!a.Name}"/>
+                        <apex:column value="{!a.CreatedBy.FirstName}"/>
+                    </apex:pageBlockTable>
+                </apex:pageBlockSection>
+            </apex:pageBlock>
+    </apex:form>
+</apex:page>

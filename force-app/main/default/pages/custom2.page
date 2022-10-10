@@ -1,0 +1,21 @@
+<apex:page controller="displayOpp">
+    <apex:pageBlock title="Opportunities > £100,000">
+        <apex:pageBlockTable value="{!opp}" var="o">
+            <apex:column value="{!o.Name}"/>
+            <apex:column value="{!o.Amount}"/>
+            <apex:column value="{!o.StageName}"/>
+            <apex:column value="{!o.CloseDate}"/>
+            <apex:column value="{!o.ExpectedRevenue}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Opportunities < £100,000">
+        <apex:pageBlockTable value="{!opp2}" var="o">
+            <apex:column value="{!o.Name}"/>
+            <apex:column value="{!o.Amount}"/>
+            <apex:column value="{!o.StageName}"/>
+            <apex:column value="{!o.CloseDate}"/>
+            <apex:column value="{!o.ExpectedRevenue}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page controller="SchemaObject" >
+    <apex:form >
+    	<apex:pageBlock >
+        	<apex:pageBlockSection >
+            	<apex:outputLabel value="Object List">
+                	<apex:selectList size="1">
+                        <apex:selectOptions value="{!objects}" />
+                    </apex:selectList>
+                </apex:outputLabel>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

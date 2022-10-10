@@ -1,0 +1,14 @@
+<apex:page controller="q4">
+<apex:form >
+     <apex:commandButton value="Channel Accounts" action="{!channel_acts}"/>
+        <apex:commandButton value="Direct Accounts" action="{!direct_acts}"/>
+        
+    <apex:pageBlock title="List of Accounts">
+        <apex:pageBlockTable value="{!acts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Phone}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

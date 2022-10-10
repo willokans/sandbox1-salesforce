@@ -1,0 +1,15 @@
+<apex:page >
+    <head>
+        <!-- STUFF GOES HERE -->
+    </head>
+    <body>
+        <div class="page-container">
+            <h1>
+                There is a page which is custom which i made!
+            </h1>
+            <h2>
+                Here's some subtitle!
+            </h2>
+        </div>
+    </body>
+</apex:page>

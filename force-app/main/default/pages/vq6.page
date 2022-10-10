@@ -1,0 +1,10 @@
+<apex:page controller="cMultiAcct">
+    <apex:form >
+        <apex:outputPanel >
+            <apex:outputLabel >Select Region</apex:outputLabel>
+            <apex:selectList value="{!listNul}" size="6" multiselect="true">
+                <apex:selectOptions value="{!selectedRegion}"/>
+            </apex:selectList>
+        </apex:outputPanel>
+    </apex:form>
+</apex:page>

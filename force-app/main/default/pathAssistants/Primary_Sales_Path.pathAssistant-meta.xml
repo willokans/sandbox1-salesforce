@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Opportunity</entityName>
+    <fieldName>StageName</fieldName>
+    <masterLabel>Primary Sales Path</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>ExpectedRevenue</fieldNames>
+        <fieldNames>Type</fieldNames>
+        <info>&lt;p&gt;For The Needs Analysis stage, please fill in the Expected Revenue and Type fields&lt;/p&gt;</info>
+        <picklistValueName>Needs Analysis</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>Amount</fieldNames>
+        <fieldNames>CloseDate</fieldNames>
+        <fieldNames>StageName</fieldNames>
+        <fieldNames>Description</fieldNames>
+        <info>&lt;p&gt;This is the guidance for success section. You can provide guidance for your reps by entering text here&lt;/p&gt;</info>
+        <picklistValueName>Prospecting</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <fieldNames>DeliveryInstallationStatus__c</fieldNames>
+        <fieldNames>CurrentGenerators__c</fieldNames>
+        <fieldNames>MainCompetitors__c</fieldNames>
+        <fieldNames>Pricebook2Id</fieldNames>
+        <info>&lt;p&gt;For The Needs Analysis stage, please fill in the Delivery/Installation status, Current Generator, Main Competition and Price Book&lt;/p&gt;</info>
+        <picklistValueName>Qualification</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

@@ -1,0 +1,13 @@
+<apex:page standardController="Account">
+    <!-- Base styles -->
+    This is Theme4d
+
+    
+    <!-- Lightning Desktop extra styles -->
+    <apex:variable var="uiTheme" value="lightningDesktop" 
+        rendered="{!$User.UIThemeDisplayed == 'Theme4d'}">
+        This is Theme4d
+    </apex:variable>
+    <!-- Rest of your page -->
+    
+</apex:page>

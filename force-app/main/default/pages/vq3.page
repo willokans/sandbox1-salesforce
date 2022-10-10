@@ -1,0 +1,19 @@
+<apex:page controller="q3">
+    <apex:pageBlock title="Direct Accounts">
+        <apex:pageBlockTable value="{!direct_acts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.Fax}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    
+    <apex:pageBlock title="Channel Accounts">
+        <apex:pageBlockTable value="{!channel_acts}" var="a">
+            <apex:column value="{!a.Name}"/>
+            <apex:column value="{!a.Industry}"/>
+            <apex:column value="{!a.Phone}"/>
+            <apex:column value="{!a.Fax}"/>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>
